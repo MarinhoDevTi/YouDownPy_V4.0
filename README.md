@@ -1,5 +1,10 @@
-# YouDownPy
-## Aplicação para fazer downloads de vídeos do Youtube, Desenvolvida por MarinhoTechDev
+# YouDownPy Versão 3.0
+## Aplicação para fazer downloads de vídeos do Youtube, Desenvolvida por MarinhoTechDev, 
+
+
+Temos novidades !!!
+
+Na versão 3.0, os vídeos serão baixados diretamente na pasta "Downloads" de seu sistema.
 
  ### Instalação e dicas:
 
