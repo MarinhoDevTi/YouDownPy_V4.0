@@ -1,5 +1,10 @@
-# YouDownPy
-## Aplicação para fazer downloads de vídeos do Youtube, Desenvolvida por MarinhoTechDev
+# YouDownPy Versão 3.0
+## Aplicação para fazer downloads de vídeos do Youtube, Desenvolvida por MarinhoTechDev, 
+
+
+Temos novidades !!!
+
+Na versão 3.0, os vídeos serão baixados diretamente na pasta "Downloads" de seu sistema.
 
  ### Instalação e dicas:
 
@@ -9,19 +14,9 @@
  ### 1 
  Primeiro é necessário a instalação do python em seu computador, acesse o site logo abaixo, faça o download e siga os passos de instalação:
 
-  https://www.python.org/
+  https://www.python.org/ 
 
-  ### 2 
-
-  ### Agora vamos instalar o pytube !!!
-
-  ### Abra o terminal do seu sistema como administrador, cole o comando logo abaixo: 
-
-
-$ pip install pytube
-
-
-### aperte enter 
+ 
 
 --------------------------------------------------------
 
