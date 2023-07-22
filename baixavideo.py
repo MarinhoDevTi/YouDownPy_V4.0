@@ -27,7 +27,7 @@ def barraTit():
 #Fim da funcao 
 
 def versao():
-    print("+      --=-=-=-=- ...::: YouDownPy v1.0 :::... -=-=-=-=-=--      +")
+    print("+      --=-=-=-=- ...::: YouDownPy v2.0 :::... -=-=-=-=-=--      +")
 #Fim da funcao
 
 def tituloApp():
