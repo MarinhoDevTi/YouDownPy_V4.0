@@ -1,3 +1,21 @@
+import importlib
+
+# Função para instalar a biblioteca pytube usando o pip
+def install_pytube():
+    import subprocess
+    try:
+        subprocess.check_call(["pip", "install", "pytube"])
+    except subprocess.CalledProcessError:
+        print("Falha ao instalar a biblioteca pytube. Verifique sua conexão com a internet e tente novamente.")
+        exit()
+
+# Verifica se a biblioteca pytube está instalada
+try:
+    importlib.import_module('pytube')
+except ImportError:
+    print("A biblioteca pytube não está instalada. Vamos instalar para você...")
+    install_pytube()
+
 #Biblioteca do pytube
 from pytube import YouTube
 
@@ -9,7 +27,7 @@ def barraTit():
 #Fim da funcao 
 
 def versao():
-    print("+      --=-=-=-=- ...::: YouDownPy v1.0 :::... -=-=-=-=-=--      +")
+    print("+      --=-=-=-=- ...::: YouDownPy v2.0 :::... -=-=-=-=-=--      +")
 #Fim da funcao
 
 def tituloApp():
