@@ -2,56 +2,6 @@ import importlib
 import subprocess
 import os
 
-# Função para instalar a biblioteca moviepy usando o pip
-def install_moviepy():
-    try:
-        subprocess.check_call(["pip", "install", "--upgrade", "moviepy"])
-    except subprocess.CalledProcessError:
-        print("Falha ao atualizar a biblioteca moviepy. Verifique sua conexão com a internet e tente novamente.")
-        exit()
-
-# Função para desinstalar a biblioteca moviepy usando o pip
-def uninstall_moviepy():
-    try:
-        subprocess.check_call(["pip", "uninstall", "moviepy", "-y"])
-    except subprocess.CalledProcessError:
-        print("Falha ao desinstalar a biblioteca moviepy. Verifique sua conexão com a internet e tente novamente.")
-        exit()
-
-# Verifica se a biblioteca moviepy está instalada e atualiza para a versão mais recente
-try:
-    importlib.import_module('moviepy')
-    # Obter a versão atual do moviepy
-    import moviepy
-    installed_version = moviepy.__version__
-
-    # Obter a versão mais recente do moviepy disponível no PyPI (repositório Python)
-    import requests
-    response = requests.get("https://pypi.org/pypi/moviepy/json")
-    latest_version = response.json()["info"]["version"]
-
-    # Verifica se a versão instalada é mais antiga que a versão mais recente
-    if installed_version != latest_version:
-        print(f"Versão atual do moviepy: {installed_version}")
-        print(f"Versão mais recente do moviepy: {latest_version}")
-        print("Atualizando para a versão mais recente...")
-
-        # Desinstalar a versão antiga do moviepy
-        uninstall_moviepy()
-
-        # Instalar a versão mais recente do moviepy
-        install_moviepy()
-        print("Atualização concluída!")
-    else:
-        print(f"Você já possui a versão mais recente do moviepy ({latest_version}).")
-except ImportError:
-    print("A biblioteca moviepy não está instalada. Vamos instalar para você...")
-    install_moviepy()
-    
-from moviepy.editor import *
-
-
-
 # Função para instalar a biblioteca pytube usando o pip
 def install_pytube():
     try:
@@ -103,27 +53,27 @@ from pytube import YouTube
 
 # Funcao barra superior Titulo
 def barraTit():
-    print("#" * 68)
+    print("#" * 65)
 
 # Fim da funcao
 
 def versao():
-    print("+      --=-=-=-=- ...::: YouDownPy v4.0 :::... -=-=-=-=-=--      +")
+    print("+      --=-=-=-=- ...::: YouDownPy v1.1 :::... -=-=-=-=-=--      +")
 
 # Fim da funcao
 
 def tituloApp():
-    print("+ ....:: Programa para Baixar Vídeos ou MP3 do Youtube ::....    +")
+    print("+     ....:: Programa para Baixar Vídeos ou MP3 do Youtube ::....      +")
 
 # Fim da funcao
 
 def linha():
-    print("-" * 68)
+    print("-" * 65)
 
 # Fim da funcao
 
 def info():
-    print("!!! Obs. Seu arquivo será salvo dentro da pasta Downloads !!!")
+    print("!!! Obs. Seu arquivo será salvo dentro da pasta do Aplicativo !!!")
 
 # Fim da funcao
 
@@ -150,21 +100,9 @@ def DownloadAudio(link):
     downloads_path = os.path.join(os.path.expanduser("~"), "Downloads")
     try:
         audio_stream.download(output_path=downloads_path)
-        original_filename = audio_stream.default_filename
-        original_filepath = os.path.join(downloads_path, original_filename)
-        mp3_filepath = os.path.join(downloads_path, f"{video.title}.mp3")
-
-        # Convertendo o arquivo para MP3
-        audio_clip = AudioFileClip(original_filepath)
-        audio_clip.write_audiofile(mp3_filepath)
-        audio_clip.close()
-
-        # Excluindo o arquivo original após a conversão para MP3
-        os.remove(original_filepath)
-
-        print("Download de áudio (MP3) completo! O arquivo mp3 foi salvo em:", mp3_filepath)
+        print("Download de áudio completo! O arquivo mp3 foi salvo em:", downloads_path)
     except:
-        print("Um erro impediu o sucesso do download do áudio (MP3).")
+        print("Um erro impediu o sucesso do download do áudio.")
 
 # Inicio do Aplicativo
 barraTit()
