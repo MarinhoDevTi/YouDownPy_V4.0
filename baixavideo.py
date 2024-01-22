@@ -139,7 +139,7 @@ def DownloadVideo(link):
     downloads_path = os.path.join(os.path.expanduser("~"), "Downloads")
     try:
         video_stream.download(output_path=downloads_path)
-        print("Download de vídeo completo! O vídeo foi salvo em:", downloads_path)
+        print("Download de vídeo completo! O vídeo foi salvo em:", downloads_path)        
     except:
         print("Um erro impediu o sucesso do download do vídeo.")
 
@@ -177,19 +177,31 @@ linha()
 espaco()
 espaco()
 
-linha()
-print("Escolha a opção:")
-print("1. Baixar MP3")
-print("2. Baixar vídeo")
-opcao = input("Digite o número da opção desejada: ")
-linha()
+# ... (código existente)
 
-link = input("Cole o endereço do link e clique em enter: ")
-linha()
+while True:
+    espaco()
+    linha()
+    print("Escolha a opção:")
+    print("1. Baixar MP3")
+    print("2. Baixar vídeo")
+    print("3. Sair")
+    opcao = input("Digite o número da opção desejada: ")
+    linha()
 
-if opcao == "1":
-    DownloadAudio(link)
-elif opcao == "2":
-    DownloadVideo(link)
-else:
-    print("Opção inválida. Por favor, escolha uma opção válida (1 ou 2).")
+    if opcao == "1":
+        link = input("Cole o endereço do link e clique em enter: ")
+        espaco()
+        DownloadAudio(link)
+    elif opcao == "2":
+        link = input("Cole o endereço do link e clique em enter: ")
+        espaco()
+        DownloadVideo(link)
+    elif opcao == "3":
+        print("Saindo do programa. Até mais!")
+        break  # Sai do loop
+    else:
+        print("Opção inválida. Por favor, escolha uma opção válida (1, 2 ou 3).")
+
+# Fim do script
+
